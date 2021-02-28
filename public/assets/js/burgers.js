@@ -2,17 +2,19 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     if(event){
         console.log('DOM loaded');
     }
-    const getDevoured = document.querySelectorAll('has-eaten');
+    const getDevoured = document.querySelectorAll('.has-eaten');
     if(getDevoured) {
         getDevoured.forEach((btn)=>{
             btn.addEventListener('click',(e)=>{
                 const id = e.target.getAttribute('data-id');
                 const gotDevoured = e.target.getAttribute('data-devoured')
-                // console.log(id,gotDevoured);
-
+                // console.log(id,gotDevoured)
+                 let parsenumber = parseInt(gotDevoured) + 1;
                 const devouredState = {
-                    devoured: gotDevoured,
+                    devoured: parsenumber,
                 };
+                console.log(devouredState);
+
 
                 fetch(`/api/burgers/${id}`,{
                     method: 'PUT',
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const getBurgerBtn  = document.getElementById('create-burger');
     burger_names = document.getElementById("bgrs").value.trim(),
     dvs = document.getElementById('devoured').checked
-    console.log(getBurgerBtn,burger_names,dvs)
+    // console.log(getBurgerBtn,burger_names,dvs)
 
     if(getBurgerBtn)  {
         getBurgerBtn.addEventListener('submit',(e)=>{
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         burger_name: document.getElementById("bgrs").value.trim(),
         devoured: document.getElementById('devoured').checked,
         };
-        console.log(newBurger, "1")
+        // console.log(newBurger, "1")
 
 
         fetch('/api/burgers',{
