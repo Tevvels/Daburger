@@ -27,7 +27,7 @@ const orm = {
     selectAll(tableInput,cb){
         let queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err,data)=>{
-            if(err) {throw err}
+            // if(err) {throw err}
             cb(data);
         });
     },
@@ -59,7 +59,7 @@ const orm = {
         queryString += condition;
 
         connection.query(queryString, (err,data)=>{
-            if(err) {throw err};
+            // if(err) {throw err};e
             callback(data);
         })
     },
@@ -69,7 +69,7 @@ const orm = {
         queryString += condition;
 
         connection.query(queryString, (err,data)=>{
-            if(err) {throw err};
+            // if(err) {throw err};
             callback(data);
         });
     },
