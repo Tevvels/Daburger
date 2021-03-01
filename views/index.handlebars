@@ -1,40 +1,41 @@
-<h1>burgers</h1>
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>{{burger_name}}</li>
-    <button class="has-eaten" data-id="{{id}}" data-devoured="{{devoured}}">
-        {{#if devoured}} YOU ATE ME! {{else}} EAT ME!{{/if}}
-    </button>
-    {{/unless}}
-    {{/each}}
-</ul>
+<h1>Da Burgers</h1>
+<img src="/assets/img/hamburger.png" alt="hamburger image">
 
-<h2>burgers that are devoured</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>{{burger_name}}</li>
-    <button class="has-eaten" data-id="{{id}}" data-devoured="{{devoured}}">
-        {{#if devoured}} YOU ATE ME! {{else}} EAT ME!{{/if}}
-    </button>
-    {{/if}}
-    {{/each}}
-</ul>
+<section class="tables">
+    <ul class="not_Devoured">
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>{{burger_name}}
+            <button class="has-eaten" data-id="{{id}}" data-devoured="0">
+                {{#if devoured}} YOU ATE ME! {{else}} EAT ME!{{/if}}
+            </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+
+
+    <ul class="devoured">
+        {{#each burgers}}
+        {{#if devoured}}
+        <pre>{{burger_name}}</pre>
+        {{/if}}
+        {{/each}}
+    </ul>
+</section>
 
 <form id="create-burger">
-    <div>
+    <article>
         <label for="bgrs">What kind of burger?</label>
         <input type="text" id="bgrs" name="burger_name">
+    </article>
 
-    </div>
-
-    <div>
+    <article>
         <label for="devoured">Devoured?</label>
         <input type="radio" name="devoured" value="1" id="devoured" checked>Devoured <br>
         <input type="radio" name="devoured" value="0" id="notDevoured">Not devoured
-    </div>
+    </article>
 
 
     <button type="submit">New Burger</button>

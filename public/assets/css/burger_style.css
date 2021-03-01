@@ -1,0 +1,27 @@
+body {
+  background: sandybrown;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
+}
+
+.not_Devoured {
+  background: tan;
+  width: 35%;
+  margin-right: 30px;
+  height: 40%;
+  list-style: none;
+}
+.devoured {
+  background: lightgrey;
+  color: grey;
+  width: 35%;
+  height: 40%;
+}
