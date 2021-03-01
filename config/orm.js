@@ -49,7 +49,7 @@ const orm = {
             callback(data);
         })
 
-    },
+    }, 
     updateOne(tb,obj,condition,callback){
         let queryString =  `UPDATE ${tb}`;
 
